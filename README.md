@@ -9,7 +9,7 @@ para iniciar a execução da automação é necessario garantir que
 
 1º baixe todas as dependencias do projeto para garantir que ele rode.
 2º Antes de iniciar verivifque que ja tenha inserido  codigo de verificação antes de iniciar. pois não é uma verificação simles e precisa de um codigo que seja enviado ao propio app ou telefone. 
-3º Abra  Logins.feature e altere o campo com usuario e senha validos para login. 
+3º Abra Logins.feature e altere o campo com Usuario e Senha validos para login e o Nome do Perfil para validação do mesmos . 
 
 ________________________________________________________________________________________________________________________________________
 

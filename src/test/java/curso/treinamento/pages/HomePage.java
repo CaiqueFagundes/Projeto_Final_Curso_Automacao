@@ -1,6 +1,7 @@
 package curso.treinamento.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,8 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.google.common.collect.ImmutableBiMap.Builder;
 
 import curso.treinamento.setup.Hooks;
 
@@ -31,37 +30,22 @@ public class HomePage {
 	@FindBy (xpath="//nav [@class='nav-header-user-layer user-menu user-menu--hidden']")
     WebElement submenuPrincipal;
 	
+	////div [@class='nav-header-user']/nav [@class='nav-header-user-layer user-menu']/div[@class='user-menu__main']/div [@class='user-menu__shortcuts ']/a [@data-id='logout']
 	
-	
-	@FindBy (xpath="//nav [@class='nav-header-user-layer user-menu user-menu--hidden']/div [@class='user-menu__main']/div [@class='user-menu__shortcuts ']/a[@data-id='logout']")
+	@FindBy (xpath="//*[@id=\"nav-header-menu\"]/div/nav/div[1]/div[2]/a[5]")
     WebElement botaoSair; 
 		
 	
 //Métodos 
 	
-	public void Efetuarlogof() {
+	public void Efetuarlogout() {
 		
 		Actions act = new Actions (Hooks.getDriver());
-		act.moveToElement(menuPrincipal).build();
-		
-		//WebDriverWait wait = new WebDriverWait(Hooks.getDriver(), 3000);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav [@class='nav-header-user-layer user-menu user-menu--hidden']")));
-		
-		act.moveToElement(botaoSair).build().perform();
-		
+		act.keyDown(Keys.SHIFT).moveToElement(menuPrincipal).click(botaoSair).build().perform();		
+		act.click(botaoSair).build().perform();
 		//botaoSair.click();
-		/*WebDriverWait wait = new WebDriverWait(Hooks.getDriver());
-		Actions acao = new Actions(Hooks.getDriver());
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By) menuPrincipal));
-		acao.moveToElement(Hooks.getDriver().findElement((By) menuPrincipal));
-		acao.moveToElement(Hooks.getDriver().findElement((By)botaoSair));
-		acao.click();
-		acao.perform();
-		*/
 		
-		
-		menuPrincipal.click();
-		botaoSair.click();		
+		System.out.println("Parabens você realisou o teste de Login com sucesso !!!!");
 	}
 	
 	public boolean checkAposLogin(String perfilUsuario) {

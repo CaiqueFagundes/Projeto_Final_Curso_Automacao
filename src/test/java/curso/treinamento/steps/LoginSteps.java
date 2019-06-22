@@ -35,8 +35,6 @@ public class LoginSteps {
 	
 	@E("^efetuo o logout da minha conta$")
 	public void efetuoOLogoutDaMinhaConta(){
-	   HomePage.Efetuarlogof();	    
-	}
-	
-	
+	   HomePage.Efetuarlogout();	    
+	}	
 }

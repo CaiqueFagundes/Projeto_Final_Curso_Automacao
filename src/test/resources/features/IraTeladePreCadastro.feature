@@ -4,7 +4,7 @@ Funcionalidade: Cadastro de Usuario
 
 Contexto:
 	Dado que eu esteja na tela de login
-    Quando faço login com o usuário "kaiq.sg1@gmail.com" e senha "aol17rfl"
+    Quando faço login com o usuário "E-mail" e senha "*******"
     Então sou autenticado com sucesso com o usuario "Caique"
     
     @IraTeladeCadastro @Cadastro

@@ -24,7 +24,7 @@ public class Hooks {
 	
 	@After
 	public void tearDown(Scenario scenario) {
-		//driver.close();
+		driver.close();
 	}
 
 	public static WebDriver getDriver() {
